@@ -1,0 +1,6 @@
+= month_calendar(events: @events) do |date, events|
+  .date
+    = "%i.%i." % [date.day, date.month]
+  - events.each do |event|
+    .event
+      = event.title

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  start_time: 2021-02-04 12:14:32
+  end_time: 2021-02-04 12:14:32
+  title: MyString
+  description: MyText
+
+two:
+  uuid: MyString
+  start_time: 2021-02-04 12:14:32
+  end_time: 2021-02-04 12:14:32
+  title: MyString
+  description: MyText
