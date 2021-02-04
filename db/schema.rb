@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_111432) do
+ActiveRecord::Schema.define(version: 2021_02_04_191003) do
+
+  create_table "event_sources", force: :cascade do |t|
+    t.string "url"
+    t.string "name"
+    t.datetime "synced_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "uuid"
@@ -20,6 +28,9 @@ ActiveRecord::Schema.define(version: 2021_02_04_111432) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "event_source_id", null: false
+    t.index ["event_source_id"], name: "index_events_on_event_source_id"
   end
 
+  add_foreign_key "events", "event_sources"
 end
