@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_calendar', '~> 2.4'
+gem 'rails-i18n'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
