@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_191003) do
+ActiveRecord::Schema.define(version: 2021_02_05_095318) do
 
   create_table "event_sources", force: :cascade do |t|
-    t.string "url"
+    t.string "location"
     t.string "name"
     t.datetime "synced_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "kind"
   end
 
   create_table "events", force: :cascade do |t|
