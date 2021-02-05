@@ -5,6 +5,13 @@
 class PagesController < ApplicationController
   def home
     @events = Event.all
+    @event_sources = EventSource.all
   end
+
+  def week
+    @events = Event.all
+    @event_sources = EventSource.all
+  end
+
 end
 

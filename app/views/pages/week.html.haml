@@ -1,0 +1,12 @@
+
+%ul
+  - color = ColorGenerator.new saturation: 0.35, value: 0.9, seed: 1
+  - @event_sources.each do |event_source|
+    %li{style: "background-color: ##{color.create_hex}"}= event_source.name
+
+= week_calendar(events: @events) do |date, events|
+  .date
+    = "%i.%i." % [date.day, date.month]
+  - events.each do |event|
+    .event
+      = event.title
