@@ -7,7 +7,7 @@ require 'json'
 
 namespace :sevencal do
   desc 'Import events from an ics file'
-  task import_ics: :environment do
+  task sync: :environment do
     EventSource.find_each do |event_source|
       if event_source.kind == 'seminardesk'
         puts "Consuming event source #{event_source.name} [#{event_source.location}]"

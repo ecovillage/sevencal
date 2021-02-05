@@ -35,8 +35,10 @@ None yet.
 Use a `rails` rake task:
 
 ```bash
-rails sevencal:import_ics
+rails sevencal:sync
 ```
+
+that will sync all data (refresh all `EventSource`s).
 
 Note that there is no error handling yet.
 
