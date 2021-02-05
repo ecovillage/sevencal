@@ -3,5 +3,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 class EventSource < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   has_many :events
 end

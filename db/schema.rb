@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_095318) do
+ActiveRecord::Schema.define(version: 2021_02_05_142533) do
 
   create_table "event_sources", force: :cascade do |t|
     t.string "location"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_02_05_095318) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "kind"
+    t.string "slug"
+    t.index ["slug"], name: "index_event_sources_on_slug", unique: true
   end
 
   create_table "events", force: :cascade do |t|
