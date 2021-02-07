@@ -8,6 +8,7 @@ class IcsImporter
   def self.import event_source
     # Parser returns an array of calendars because a single file
     # can have multiple calendars.
+    now = DateTime.current
     calendars = Icalendar::Calendar.parse(File.open event_source.location)
 
     if calendars.count != 1
@@ -18,6 +19,8 @@ class IcsImporter
     calendar = calendars.first
 
     calendar.events.each do |event|
+      next if event.dtstart < now
+
       event_source.events.create!(
         uuid:       event.uid,
         start_time: event.dtstart,
@@ -28,5 +31,7 @@ class IcsImporter
       puts "start date-time timezone: #{event.dtstart.ical_params['tzid']}"
       puts "summary: #{event.summary}"
     end
+
+    event_source.update!(synced_at: now)
   end
 end

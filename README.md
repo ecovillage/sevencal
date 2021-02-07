@@ -20,6 +20,9 @@ rails r 'EventSource.create!(name: "MyEventSource", location: "https://myseminar
 rails r 'EventSource.create!(name: "MyLocalICSFile", location: "/tmp/myfile.ics", kind: "local_ics_file")'
 ```
 
+Alternatively, use the `rails sevencal:add_ics_file` or `rails
+sevencal:add_seminardesk_api_url` to interactively add Event Sources.
+
 Currently, two `kind`s of EventSources are implemented:
 
   * `seminardesk` to fetch from a proprietary API
@@ -39,6 +42,10 @@ rails sevencal:sync
 ```
 
 that will sync all data (refresh all `EventSource`s).
+This task is suitable for a cron-job.
+
+Note that this will throw away all previously stored events and only add future
+events.
 
 Note that there is no error handling yet.
 
@@ -55,6 +62,11 @@ Contributions are welcome, drop me a line / open an issue.
 Licensed under the [AGPLv3+](LICENSE.txt), copyright 2021 Felix Wolfsteller.
 
 ## Knowledgebase & devlog
+
+### The Sync-Problem
+
+* Instead of comparing everything during every sync step, a cheap solution is to
+  throw everything (all events) away before importing.
 
 ### simple_calendar
 

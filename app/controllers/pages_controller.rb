@@ -12,6 +12,5 @@ class PagesController < ApplicationController
     @events = Event.all
     @event_sources = EventSource.all
   end
-
 end
 
