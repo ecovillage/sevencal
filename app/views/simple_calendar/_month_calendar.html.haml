@@ -16,7 +16,7 @@
         %tr
           %td.weeknum
             = link_to week_path(start_date: '22') do
-              = t(:week)
+              = t('week_of_year')
               #{week.first.strftime('%-V')}
           - week.each do |day|
             = content_tag :td, class: calendar.td_classes_for(day) do

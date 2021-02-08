@@ -1,0 +1,5 @@
+%ul
+  %li
+    = t(:all)
+  - @event_sources.each do |event_source|
+    %li{style: "background-color: ##{color_for event_source}"}= event_source.name

@@ -29,6 +29,12 @@ html {
 }
 
 /* TODO scope */
+.calendar-heading {
+  margin-bottom: 1em;
+}
+
+
+/* TODO scope */
 .date {
   text-align: center;
 }
@@ -36,4 +42,20 @@ html {
 /* TODO scope */
 td:hover {
   background-color: rgb(245,245,245);
+}
+
+.header ul {
+    list-style-type: none;
+}
+.header ul li {
+    display: inline;
+    float:   left;
+    margin:  5px;
+    padding: 3px;
+    background-color: #aaa;
+}
+
+.content {
+  clear:      both;
+  text-align: center;
 }
