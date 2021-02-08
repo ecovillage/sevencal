@@ -53,6 +53,14 @@ Note that there is no error handling yet.
 
 Nothing fancy.
 
+### Syncing scenario
+
+For the POC the syncing scenario is as following:
+
+A nextcloud instance downloads local caldav file and copies it to the server.
+The server converts the seminardesk data and writes it to file.
+The nextcloud instance downloads the remote seminardesk ics file.
+
 ## Contribution
 
 Contributions are welcome, drop me a line / open an issue.
