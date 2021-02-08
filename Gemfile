@@ -30,6 +30,7 @@ gem 'haml-rails'
 gem 'simple_calendar', '~> 2.4'
 gem 'rails-i18n'
 gem 'icalendar'
+gem 'friendly_id', '~> 5.4.0'
 
 gem 'seminardesk_ics', github: 'ecovillage/seminardesk_ics', branch: 'main'
 
