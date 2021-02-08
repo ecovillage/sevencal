@@ -7,7 +7,7 @@ class SeminardeskImporter
     now = DateTime.current
 
     json = SeminardeskICS::API.fetch_json event_source.location
-    dates = SeminardeskICS::Converter.to_icalendar(json)
+    dates = json[:dates]
    
     dates.each do |date|
       next if Time.at(date[:beginDate]/1000) < now
