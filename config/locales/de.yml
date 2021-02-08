@@ -1,4 +1,5 @@
 de:
   simple_calendar:
-    previous: Früher
-    next: Später
+    previous: "<<"
+    next: ">>"
+    week: Woche
