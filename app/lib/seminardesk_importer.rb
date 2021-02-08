@@ -2,18 +2,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-require 'net/http'
-require 'json'
-
 class SeminardeskImporter
   def self.import event_source
     now = DateTime.current
-    uri = URI(event_source.location)
-    response = Net::HTTP.get uri
-    
-    payload = JSON.parse(response, symbolize_names: true)
-    dates = payload[:dates]
-    
+
+    json = SeminardeskICS::API.fetch_json event_source.location
+    dates = SeminardeskICS::Converter.to_icalendar(json)
+   
     dates.each do |date|
       next if Time.at(date[:beginDate]/1000) < now
 

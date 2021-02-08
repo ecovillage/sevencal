@@ -30,7 +30,8 @@ gem 'haml-rails'
 gem 'simple_calendar', '~> 2.4'
 gem 'rails-i18n'
 gem 'icalendar'
-gem 'friendly_id'
+
+gem 'seminardesk_ics', github: 'ecovillage/seminardesk_ics', branch: 'main'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
