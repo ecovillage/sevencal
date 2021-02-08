@@ -2,5 +2,5 @@
   .date
     = "%i.%i." % [date.day, date.month]
   - events.each do |event|
-    .event
+    .event{style: "background-color: ##{color_for event.event_source}"}
       = event.title
